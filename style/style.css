@@ -1,0 +1,22 @@
+body {
+	background-color: #400606;
+	padding:10px;
+	color:white;
+}
+
+table {
+	color: black;
+}
+
+#project_iframe{
+	position: absolute;
+	right: 10px;
+	top: 137px;
+	height: 400px;
+}
+
+#project_iframe_button{
+	position: absolute;
+	right: 10px;
+	top: 547px;
+}
