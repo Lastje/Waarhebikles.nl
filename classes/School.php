@@ -3,6 +3,9 @@
 	class School extends Masterclass {
 		protected $name;
 		protected $Id;
+		protected $Adress;
+		protected $Zipcode;
+
 
 		public function School($dataArray) {
 			foreach($dataArray as $key=>$value){
