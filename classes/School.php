@@ -1,16 +1,18 @@
 <?php
 
 	class School extends Masterclass {
-		protected $Name;
-		protected $SchoolID;
-		$Name = "dePassie";
+		protected $name;
+		protected $schoolId;
 
-		public function School($Name, $SchoolID) {
-			this->$Name = $Name;
-			this->$SchoolID = $SchoolID;
+		public function School($dataArray) {
+			foreach($dataArray as $key=>$value){
+				if(property_exists($this, $key)){
+					$this->$key = $value;
+				}
+			}
 		}
 
-		public function addTeacher($name, $adress, $date_of_birth, $zipcode) {
+		public function addTeacher($name, $adress, $date_of_birth, $zipCode) {
 			//database add new Teacher($name, $adress, $date_of_birth, $zipcode);
 		}
 	}
