@@ -7,10 +7,11 @@
 		public function School($dataArray) {
 			foreach($dataArray as $key=>$value){
 				if(property_exists($this, $key)){
-					$this->$key = $value;
+					if(!empty($value)){
+						$this->$key = $value;
+					}
 				}
 			}
-
 		}
 
 		public function addTeacher($name, $adress, $date_of_birth, $zipCode) {
