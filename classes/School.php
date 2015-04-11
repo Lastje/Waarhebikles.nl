@@ -2,15 +2,19 @@
 
 	class School extends Masterclass {
 		protected $Name;
-		protected $SchoolID;
+		protected $ID;
 
-		public function School($Name, $SchoolID) {
+		public function School($Name, $ID) {
 			this->$Name = $Name;
-			this->$SchoolID = $SchoolID;
+			this->$ID = $ID;
 		}
 
 		public function addTeacher($name, $adress, $date_of_birth, $zipcode) {
 			//database add new Teacher($name, $adress, $date_of_birth, $zipcode);
+		}
+
+		public function removeTeacher($ID) {
+			//search database and remove the teacher with this ID
 		}
 	}
 ?>
