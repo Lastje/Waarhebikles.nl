@@ -64,7 +64,7 @@
 	global $database;
 
 	//database connection
-	$database = new Database(DATABASE_HOST,DATABASE_NAME,DATABASE_USER,DATABASE_PASSWORD);
+	//$database = new Database(DATABASE_HOST,DATABASE_NAME,DATABASE_USER,DATABASE_PASSWORD);
 
 	//define globals;
 	$product_content = null;
