@@ -19,4 +19,5 @@
 	include DIRECTORY_TEMPLATES . 'footer.php';
 
 ?>
-<h1 iets leuks/>
+
+<h1>iets leuks</h1>
