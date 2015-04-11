@@ -42,7 +42,8 @@
 
 	//include ROOT_classes
 	//use later
-	//include DIRECTORY_CLASSES . 'Masterclass.php';
+	include DIRECTORY_CLASSES . 'Masterclass.php';
+	include DIRECTORY_CLASSES . 'View.php';
 	//include DIRECTORY_CLASSES . 'Database.php';
 
 	//Database information

@@ -7,17 +7,7 @@
 		include'config/config.php';
 	}
 
-	//start of html
-	include DIRECTORY_TEMPLATES . 'header.php';
-
 	//pathHandler
 	include DIRECTORY_CONFIG . 'requestPathHandler.php';
 
-	include DIRECTORY_TEMPLATES . 'inloggen.php';
-
-	//end of html
-	include DIRECTORY_TEMPLATES . 'footer.php';
-
 ?>
-
-<h1>iets leuks</h1>

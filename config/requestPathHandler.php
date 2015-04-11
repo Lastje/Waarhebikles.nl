@@ -1,9 +1,13 @@
 <?php
 	
-	$request = str_replace(URL_ROOT, '', $globalPath);
+	$request_stripped1 = str_replace(URL_ROOT, '', $globalPath);
+	$request = str_replace('/', '', $request_stripped1);
 
-	
-	include DIRECTORY_TEMPLATES . 'main.php';
+	if($request=='contact'){
+
+	}else{
+		View::route(true,'main');
+	}
 
 	
 
