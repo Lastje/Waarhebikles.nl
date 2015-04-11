@@ -3,7 +3,7 @@
 		private $database;
 		
 		public function get($atr){
-			if(!empty($atr) && property_exists($this, $atr)){
+			if(!empty($atr) && property_exists($this, $atr) && gettype($atr) == string){
 				$atr = strtolower($atr);
 				return $this->$atr;
 			}
