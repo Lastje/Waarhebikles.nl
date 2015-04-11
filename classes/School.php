@@ -3,7 +3,6 @@
 	class School extends Masterclass {
 		protected $Name;
 		protected $SchoolID;
-		$Name = "dePassie";
 
 		public function School($Name, $SchoolID) {
 			this->$Name = $Name;
