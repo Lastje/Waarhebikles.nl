@@ -2,7 +2,7 @@
 
 	class School extends Masterclass {
 		protected $name;
-		protected $schoolId;
+		protected $Id;
 
 		public function School($dataArray) {
 			foreach($dataArray as $key=>$value){
@@ -18,7 +18,7 @@
 			//database add new Teacher($name, $adress, $date_of_birth, $zipcode);
 		}
 
-		public function removeTeacher($Id) {
+		public function removeTeacher($teacherId) {
 			//search database and remove the teacher with this ID
 		}
 	}

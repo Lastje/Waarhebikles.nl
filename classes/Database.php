@@ -6,11 +6,12 @@
 		protected $password;
 		protected $object;
 
-		public function Database($host,$database_name,$user,$password){
-			$this->host = $host;
-			$this->database_name = $database_name;
-			$this->user = $user;
-			$this->password = $password;
+		public function Database($dataArray){
+			foreach($dataArray as $key=>$value){
+				if(property_exists($this, $key)){
+					$this->$key = $value;
+				}
+			}
 
 			//method to create PDO class
 			$this->connect();
