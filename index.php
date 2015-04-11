@@ -9,8 +9,6 @@
 
 	//start of html
 	include DIRECTORY_TEMPLATES . 'header.php';
-	include DIRECTORY_TEMPLATES . 'menu.php';
-	include DIRECTORY_TEMPLATES . 'error.php';
 
 	//pathHandler
 	include DIRECTORY_CONFIG . 'requestPathHandler.php';

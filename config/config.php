@@ -41,8 +41,9 @@
 	define('DIRECTORY_CONFIG', ROOT . 'config/');
 
 	//include ROOT_classes
-	include DIRECTORY_CLASSES . 'Masterclass.php';
-	include DIRECTORY_CLASSES . 'Database.php';
+	//use later
+	//include DIRECTORY_CLASSES . 'Masterclass.php';
+	//include DIRECTORY_CLASSES . 'Database.php';
 
 	//Database information
 	if($local_development){
