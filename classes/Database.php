@@ -38,7 +38,7 @@
 				if(!empty($params)){
 					foreach($params as $key=>$param){
 						var_dump($param);
-						$r->bindParam($key,$param, PDO::PARAM_STR);
+						$r->bindParam($key,$param);
 					}
 				}
 				

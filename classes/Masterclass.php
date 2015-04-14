@@ -11,8 +11,17 @@
 						}
 					}
 				}elseif(is_numeric($dataArray)){
-					$this->getDataOfObject(strtolower(get_class($this)),$dataArray);
-					return "dit is het object";
+					$dataArray = $this->getDataOfObject(strtolower(get_class($this)),$dataArray);
+					$dataArray = current($dataArray);
+					if(is_array($dataArray)){
+						foreach($dataArray as $key=>$value){
+							if(property_exists($this, $key)){
+								if(!empty($value)){
+									$this->$key = $value;
+								}
+							}
+						}
+					}
 				}
 				
 			}
@@ -40,7 +49,10 @@
 			if(in_array($className, $this->getLegalTables())){
 				$database = Masterclass::getDatabaseObject();
 				$boundValues = array();
-				$query = "SELECT * FROM :table WHERE id = :id";
+				$query = "SELECT * FROM $className WHERE id = :id";
+				$result = $database->query($query,array(":id"=>$objectId));
+				$result;
+				return $result;
 			}
 		}
 
