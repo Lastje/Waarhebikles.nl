@@ -12,8 +12,8 @@
 					}
 				}elseif(is_numeric($dataArray)){
 					$dataArray = $this->getDataOfObject(strtolower(get_class($this)),$dataArray);
-					$dataArray = current($dataArray);
 					if(is_array($dataArray)){
+						$dataArray = current($dataArray);
 						foreach($dataArray as $key=>$value){
 							if(property_exists($this, $key)){
 								if(!empty($value)){
@@ -53,6 +53,8 @@
 				$result = $database->query($query,array(":id"=>$objectId));
 				$result;
 				return $result;
+			}else{
+				Error::setError(__METHOD__."_".__LINE__,"de class '".get_class($this)."' is geen legale class",3,__FILE__,__LINE__);
 			}
 		}
 
@@ -64,7 +66,13 @@
 			$connectionInfo['password'] = DATABASE_PASSWORD;
 			$database = new Database($connectionInfo);
 
-			return $database;
+			if($database instanceof Database){
+				return $database;
+			}else{
+				Error::setError(__METHOD__."_".__LINE__,"Er kon geen verbinding gemaakt worden met de database",3,__FILE__,__LINE__);
+			}
+
+			
 		}
 
 		public function all(){
@@ -83,7 +91,7 @@
 
 				return $objectArray;
 			}else{
-				return false;
+				Error::setError(__CLASS__."_".__METHOD__."_".__LINE__,"de class '".get_class($this)."' is geen legale class",3,__FILE__,__LINE__);
 			}
 		}
 

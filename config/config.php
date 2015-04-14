@@ -41,8 +41,13 @@
 	define('DIRECTORY_ACTIONS', ROOT . 'actions/');
 	define('DIRECTORY_CONFIG', ROOT . 'config/');
 
+	//session
+	session_start();
+	
 	//include ROOT_classes
 	//use later
+
+	include DIRECTORY_CLASSES . 'Error.php';
 	include DIRECTORY_CLASSES . 'Masterclass.php';
 	include DIRECTORY_CLASSES . 'View.php';
 	include DIRECTORY_CLASSES . 'Database.php';
@@ -77,8 +82,7 @@
 	//url
 	$globalPath = $_SERVER['REQUEST_URI'];
 
-	//session
-	session_start();
+	
 
 
 ?>

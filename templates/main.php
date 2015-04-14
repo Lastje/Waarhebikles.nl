@@ -9,5 +9,7 @@ $school = new School(1);
 
 	echo $school->get('name');
 
+$school->all();
+
 
 ?>
