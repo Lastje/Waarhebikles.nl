@@ -32,7 +32,8 @@
 		define('TEST_MODUS',false);
 		define('LOCAL_MODUS',false);
 	}
-	define('DIRECTORY_STYLE', ROOT . 'style/' );
+	define('DIRECTORY_STYLE', URL_ROOT . 'style/' );
+	define('DIRECTORY_JS', URL_ROOT . 'style/js/' );
 	define('DIRECTORY_TEMPLATES', ROOT . 'templates/');
 	define('DIRECTORY_FONT', ROOT . 'font/');
 	define('DIRECTORY_BOOTSTRAP', DIRECTORY_STYLE . 'bootstrap/');
@@ -44,31 +45,31 @@
 	//use later
 	include DIRECTORY_CLASSES . 'Masterclass.php';
 	include DIRECTORY_CLASSES . 'View.php';
-	//include DIRECTORY_CLASSES . 'Database.php';
+	include DIRECTORY_CLASSES . 'Database.php';
+
+	//entities
+	include DIRECTORY_CLASSES . 'School.php';
+
 
 	//Database information
-	if($local_development){
-		define('DATABASE_NAME', 'joslast.new');
-		define('DATABASE_HOST', 'localhost');
-		define('DATABASE_USER', 'root');
-		define('DATABASE_PASSWORD', '');
-	} else {
-		define('DATABASE_NAME', 'joslaor20_db');
-		define('DATABASE_HOST', 'localhost');
-		define('DATABASE_USER', 'joslaor20_db');
-		define('DATABASE_PASSWORD', 'joslastww01');
-	}
+	define('DATABASE_NAME', 'joslaor20_whil');
+	define('DATABASE_HOST', '159.253.0.17:3306');
+	define('DATABASE_USER', 'joslaor20_whil');
+	define('DATABASE_PASSWORD', 'whiljljjk');
 
 	//globals
-	global $product_content;
 	global $nav_pad;
-	global $database;
+	global $global_database;
 
 	//database connection
-	//$database = new Database(DATABASE_HOST,DATABASE_NAME,DATABASE_USER,DATABASE_PASSWORD);
+	$connectionInfo = array();
+	$connectionInfo['host'] = DATABASE_HOST;
+	$connectionInfo['database_name'] = DATABASE_NAME;
+	$connectionInfo['user'] = DATABASE_USER;
+	$connectionInfo['password'] = DATABASE_PASSWORD;
+	$database = new Database($connectionInfo);
 
 	//define globals;
-	$product_content = null;
 	$nav_pad = array();
 
 	//include DEFAULT_classes

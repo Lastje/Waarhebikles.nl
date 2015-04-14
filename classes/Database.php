@@ -7,13 +7,14 @@
 		protected $object;
 
 		public function Database($dataArray){
+			//fill the database information from config
 			foreach($dataArray as $key=>$value){
 				if(property_exists($this, $key)){
 					$this->$key = $value;
 				}
 			}
 
-			//method to create PDO class
+			//connect with PDO
 			$this->connect();
 		}
 
@@ -29,10 +30,33 @@
 			}
 
 		}
-		//->query('SELECT','','product',$array = array(':id'=>1,),'ORDER BY id');
-		public function query($type,$values = '*',$table,$params,$sql){ //params -> array (:key,value);
+
+		public function query($query,$params){
+
+			//execute
+				$r = $this->object->prepare($query);
+				if(!empty($params)){
+					foreach($params as $key=>$param){
+						var_dump($param);
+						$r->bindParam($key,$param, PDO::PARAM_STR);
+					}
+				}
+				
+				$r->execute();
+
+				$resultRow = array();
+
+				while($row = $r->fetch(PDO::FETCH_ASSOC)){
+					$resultRow[] = $row;
+				}
+
+				return $resultRow;
+		}
+
+		//->searh('SELECT','','product',$array = array(':id'=>1,),'ORDER BY id');
+		public function search($type,$values,$table,$params,$sql){ //params -> array (:key,value);
 			$legal_types = array('SELECT'); //todo: ,'UPDATE','INSERT'  //key = fieldname
-			$legal_table = array('product');
+			$legal_table = array('school');
 			$query = '';
 
 			//type
@@ -53,7 +77,7 @@
 				}elseif(!is_array($values) && strlen($values) > 1){
 					$query .= $values . ' ';
 				}else{
-					$query .= $values . ' ';
+					$query .= '*';
 				}
 
 				//table
@@ -81,11 +105,13 @@
 
 
 				//execute
-
 				$r = $this->object->prepare($query);
-				foreach($params as $key=>$param){
-					$r->bindParam($key, $param, PDO::PARAM_STR);
+				if(!empty($params)){
+					foreach($params as $key=>$param){
+						$r->bindParam($key, $param, PDO::PARAM_STR);
+					}
 				}
+				
 								
 				$r->execute();
 
