@@ -43,7 +43,7 @@
 
 	//session
 	session_start();
-	
+
 	//include ROOT_classes
 	//use later
 
@@ -55,24 +55,12 @@
 	//entities
 	include DIRECTORY_CLASSES . 'School.php';
 
-
-	//Database information
-	define('DATABASE_NAME', 'joslaor20_whil');
-	define('DATABASE_HOST', '159.253.0.17:3306');
-	define('DATABASE_USER', 'joslaor20_whil');
-	define('DATABASE_PASSWORD', 'whiljljjk');
-
+	//getPasswords from localStorage
+	include DIRECTORY_CONFIG . 'protected.php';
+	
 	//globals
 	global $nav_pad;
 	global $global_database;
-
-	//database connection
-	$connectionInfo = array();
-	$connectionInfo['host'] = DATABASE_HOST;
-	$connectionInfo['database_name'] = DATABASE_NAME;
-	$connectionInfo['user'] = DATABASE_USER;
-	$connectionInfo['password'] = DATABASE_PASSWORD;
-	$database = new Database($connectionInfo);
 
 	//define globals;
 	$nav_pad = array();
