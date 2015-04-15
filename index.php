@@ -10,4 +10,5 @@
 	//pathHandler
 	include DIRECTORY_CONFIG . 'requestPathHandler.php';
 
+	
 ?>

@@ -6,7 +6,6 @@
 		protected $Adress;
 		protected $Zipcode;
 
-
 		public function School($dataArray) {
 			foreach($dataArray as $key=>$value){
 				if(property_exists($this, $key)){

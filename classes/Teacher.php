@@ -4,7 +4,7 @@
 		protected $date_of_birth;
 		protected $adress;
 		protected $zipcode;
-		protected $ID;
+		protected $Id;
 		protected $Subject;
 
 		public function Teacher($dataArray) {

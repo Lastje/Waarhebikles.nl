@@ -1,5 +1,5 @@
 <?php
-	class Masterclass {
+	interface Masterclass {
 		private $database;
 		
 		public function get($atr){
