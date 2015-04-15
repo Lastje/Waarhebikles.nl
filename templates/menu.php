@@ -17,7 +17,7 @@
             <form style="margin:5px;">
               <input style="margin-bottom:5px;" type="text" class="form-control" name="userName" placeholder="gebruikersnaam"/>
               <input style="margin-bottom:5px;" type="password" class="form-control" name="password" placeholder="wachtwoord"/>
-              <input type="submit" class="form-control" value="Inloggen"/>
+              <input type="submit" class="form-control btn-primary" value="Inloggen"/>
             </form>
             <li class="divider"></li>
             <li><a href="#">Wachtwoord vergeten</a></li>
