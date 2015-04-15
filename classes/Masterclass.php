@@ -1,10 +1,7 @@
 <?php
-<<<<<<< HEAD
-	interface Masterclass {
-		private $database;
-		
-=======
+
 	class Masterclass {
+
 		public function __construct($dataArray = false){
 			if($dataArray){
 				if(is_array($dataArray)){
@@ -32,7 +29,6 @@
 			}
 		}
 
->>>>>>> origin/master
 		public function get($atr){
 			if(!empty($atr) && property_exists($this, $atr) && is_string($atr)){
 				$atr = strtolower($atr);
