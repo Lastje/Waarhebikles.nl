@@ -1,6 +1,7 @@
 <?php
 
 	class Masterclass {
+
 		public function __construct($dataArray = false){
 			if($dataArray){
 				if(is_array($dataArray)){

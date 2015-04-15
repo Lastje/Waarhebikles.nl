@@ -7,11 +7,5 @@
 		protected $Id;
 		protected $Subject;
 
-		public function Teacher($dataArray) {
-			foreach($dataArray as $key=>$value){
-				if(property_exists($this, $key)){
-					$this->$key = $value;
-				}
-			}
-		}
+
 	}
